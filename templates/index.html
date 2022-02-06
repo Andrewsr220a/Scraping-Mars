@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+        </div>
+        <h2>Latest Mars News</h2>
+        <h3>{{mars.news_title}}</h3>
+        <h4>{{mars.news_p}}</h4>
+
+        <h2>Featured Mars Image</h2>
+        <img src="{{mars.image_url}}" alt="Mars Image">
+
+        <div class="col-lg-4">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Mars Facts</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{mars.mars_facts | safe}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <h1 align="center"> Mars Hemispheres</h1>
+    <br>
+
+    {% for picture in mars.hemisphers1 %}
+    <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+            <img src="{{picture.img_url}}" width="600" height="600" alt="Mars Image">
+            <div class="card-body">
+                <p class="card-text"> {{ picture.title }}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</body>
+
+</html>
