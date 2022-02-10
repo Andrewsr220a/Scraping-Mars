@@ -18,10 +18,10 @@
         </div>
         <h2>Latest Mars News</h2>
         <h3>{{mars.news_title}}</h3>
-        <h4>{{mars.news_p}}</h4>
+        <h4>{{mars.summary}}</h4>
 
         <h2>Featured Mars Image</h2>
-        <img src="{{mars.image_url}}" alt="Mars Image">
+        <img src="{{mars.featured_image}}" alt="Mars Image">
 
         <div class="col-lg-4">
             <div class="card" style="width: 20rem;">
@@ -38,7 +38,7 @@
     <h1 align="center"> Mars Hemispheres</h1>
     <br>
 
-    {% for picture in mars.hemisphers1 %}
+    {% for picture in mars.hemisphere_image_urls %}
     <div class="col-md-6">
         <div class="card" style="width: 18rem;">
             <img src="{{picture.img_url}}" width="600" height="600" alt="Mars Image">

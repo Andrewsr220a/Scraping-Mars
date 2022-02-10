@@ -12,6 +12,7 @@ def init_browser():
     # Set up Splinter
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
+    return browser
 
 
 def scrape():
@@ -62,6 +63,7 @@ def scrape():
     for hemi in hemisphere1:
         if hemi.h3:
             title = hemi.h3.text
+            hemi.click
             link = hemi["href"]
             main_url = "https://marshemispheres.com/"
             forward_url = main_url+link
@@ -72,16 +74,16 @@ def scrape():
             image = hemi2.ul.a["href"]
             hemi_dict = {}
             hemi_dict["title"] = title
-            hemi_dict["img_url"] = image
+            hemi_dict["img_url"] = main_url + image
             hemisphere_image_urls.append(hemi_dict)
             browser.back()
-        print(hemi_dict)
+        # print(hemi_dict)
         mars_data = {
             'news_title': news_title,
             'summary': news_p,
             'featured_image': image_url,
             'mars_table': mars_table,
-            'hemisphere_image_urls': hemisphere1,
+            'hemisphere_image_urls': hemisphere_image_urls,
             'news_url': url,
             'jpl_url': jpl_url,
             'fact_url': mars_url,
