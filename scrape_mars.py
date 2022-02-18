@@ -80,8 +80,8 @@ def scrape():
         # print(hemi_dict)
         mars_data = {
             'news_title': news_title,
-            'summary': news_p,
-            'featured_image': image_url,
+            'news_p': news_p,
+            'image_url': image_url,
             'mars_table': mars_table,
             'hemisphere_image_urls': hemisphere_image_urls,
             'news_url': url,

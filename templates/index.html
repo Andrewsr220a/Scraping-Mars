@@ -18,17 +18,17 @@
         </div>
         <h2>Latest Mars News</h2>
         <h3>{{mars.news_title}}</h3>
-        <h4>{{mars.summary}}</h4>
+        <h4>{{mars.news_p}}</h4>
 
         <h2>Featured Mars Image</h2>
-        <img src="{{mars.featured_image}}" alt="Mars Image">
+        <img src="{{mars.image_url}}" alt="Mars Image">
 
         <div class="col-lg-4">
             <div class="card" style="width: 20rem;">
                 <div class="card-body">
                     <h4 class="card-title">Mars Facts</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">{{mars.mars_facts | safe}}</h6>
-                </div>
+                    <table class="table">{{mars.mars_table}}</table>
+                </div>N
             </div>
         </div>
     </div>
